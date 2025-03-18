@@ -1,36 +1,72 @@
-.vertical-timeline span {
-    color: white;
+// Import Google Font (if not already imported)
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+
+// General Styles
+.vertical-timeline {
     font-family: 'Courier Prime', monospace;
-}
-
-.vertical-timeline p {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element p {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element h3 {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element h4 {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element span {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element .vertical-timeline-element-date {
     color: white;
+    padding: 2rem 0;
 }
 
+// Timeline Elements
+.vertical-timeline-element {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    h3, h4, p, span {
+        color: rgb(39, 40, 34);
+    }
+
+    .vertical-timeline-element-content {
+        border-radius: 8px;
+        padding: 1.5rem;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    .vertical-timeline-element-date {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
+// Icons Styling
 .svg-inline--fa {
     color: white;
 }
 
+// Education Timeline Styling
+.vertical-timeline-element--education {
+    .vertical-timeline-element-title {
+        color: #2c3e50; // Dark blue for education
+    }
+
+    .vertical-timeline-element-subtitle {
+        color: #34495e; // Slightly darker blue
+    }
+
+    p {
+        color: rgb(39, 40, 34);
+    }
+
+    .vertical-timeline-element-icon {
+        background: #ffb400 !important; // Yellow for education
+        border: 3px solid white;
+        box-shadow: 0 0 10px rgba(255, 180, 0, 0.6);
+    }
+}
+
+// Responsive Styles
 @media screen and (max-width: 1170px) {
     .vertical-timeline-element .vertical-timeline-element-date {
         color: rgb(39, 40, 34);
